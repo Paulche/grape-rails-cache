@@ -18,6 +18,7 @@ module Grape
               result = yield
 
               header "ETag", etag(object)
+              header 'Cache-Control', 'public, max-age=0, must-revalidate'
 
               result
             end
